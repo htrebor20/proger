@@ -1,0 +1,68 @@
+body,
+html {
+    height: 100%;
+}
+
+.color-custom {
+    background-color: #0A3871;
+    border: none;
+}
+
+.edit-color {
+    background-color: #b4b4b4;
+    color: #0A3871;
+    border: none;
+}
+
+.edit-color:hover {
+    background-color: #4b4b4b;
+    color: white;
+}
+
+.edit-color:active {
+    background-color: #4b4b4b;
+    color: white;
+}
+
+.delete-color {
+    background-color: #0A3871;
+    color: white;
+    border: none;
+}
+
+.delete-color:hover {
+    background-color: rgb(0, 92, 178);
+    color: white;
+}
+
+.delete-color:active {
+    background-color: rgb(0, 92, 178);
+    color: white;
+}
+
+.layout-container {
+    height: 100vh;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #0A3871; 
+}
+
+.navbar-nav.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    border-bottom: 2px solid white;
+    border-radius: 0;    
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+    font-weight: 700;
+  }
+
+  .nav-pills .nav-link {
+    background-color: #f8f9fa; 
+    font-weight: 500;
+    color: #0A3871; 
+  }
+
+  .nav-pills .nav-link:hover:not(.active) {
+    background-color: #e9ecef;
+  }

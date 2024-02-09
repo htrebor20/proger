@@ -1,0 +1,65 @@
+body,
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background-image: url(../imagenes/loginBG.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 5rem;
+}
+
+.login-background{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    padding: 2rem;
+    padding-top: 4rem;
+    background-color: #0A3871;
+    opacity: 94%;
+    border-radius: 2rem;
+    align-items: center;
+    justify-content: space-around;
+    height: 90%;
+}
+
+.logo {
+    width: 240px;
+}
+
+.login-titulo{
+    font-weight: bolder;
+    font-size: 2.2rem;
+}
+
+.login-saludo{
+    font-size: 1.5rem;
+}
+
+.formulario {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.formulario input {
+    width: 70%;
+    display: block;
+    background-color: transparent;
+    border: none;
+    border-bottom: white thin solid;
+    text-align: center;
+    outline: none;
+    padding: .2rem 0;
+    color: white;
+    font-size: 1.3rem;
+}
