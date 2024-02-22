@@ -24,19 +24,22 @@ class ModeloPersonas
 
     static public function deleteUsuarios($tabla, $valor)
     {
+
+
         $stmt = Conexion::conectar()->prepare(
             "DELETE FROM $tabla WHERE id=:id"
         );
-
         $stmt->bindParam(":id", $valor, PDO::PARAM_INT);
-
-        if ($stmt->execute()) {
+        try {
+            $stmt->execute();
+            $stmt->closeCursor();
+            $stmt = null;
             return "ok";
-        } else {
-            print_r(Conexion::conectar()->errorInfo());
+        } catch (\Throwable $th) {
+            $stmt->closeCursor();
+            $stmt = null;
+            return "error";
         }
-        $stmt->closeCursor();
-        $stmt = null;
     }
 
 
@@ -67,14 +70,13 @@ class ModeloPersonas
     static public function createUsuarios($tabla, $datos)
     {
         $stmt = Conexion::conectar()->prepare(
-            "INSERT INTO $tabla (documento, nombre, correo, contrasena, tipo_id, telefono, ciudad, direccion) VALUES (:documento, :nombre, :correo, :contrasena, :tipo_id, :telefono, :ciudad, :direccion)"
+            "INSERT INTO $tabla (documento, nombre, correo, contrasena, telefono, ciudad, direccion) VALUES (:documento, :nombre, :correo, :contrasena, :telefono, :ciudad, :direccion)"
         );
 
         $stmt->bindParam(":documento", $datos["documento"], PDO::PARAM_STR);
         $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
         $stmt->bindParam(":correo", $datos["correo"], PDO::PARAM_STR);
         $stmt->bindParam(":contrasena", $datos["contrasena"], PDO::PARAM_STR);
-        $stmt->bindParam(":tipo_id", $datos["tipo_id"], PDO::PARAM_INT);
         $stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
         $stmt->bindParam(":ciudad", $datos["ciudad"], PDO::PARAM_STR);
         $stmt->bindParam(":direccion", $datos["direccion"], PDO::PARAM_STR);

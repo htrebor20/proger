@@ -17,38 +17,38 @@ if (isset($_GET["id"])) {
         <div class="mb-3 mt-3 col-md-4">
             <label for="documento" class="form-label">Documento:</label>
             <input type="text" class="form-control" id="update_user_documento" placeholder="Escriba su documento"
-                name="update_user_documento" value="<?php echo $usuario["documento"] ?>">
+                name="update_user_documento" value="<?php echo $usuario["documento"] ?>" required>
         </div>
         <div class="mb-3 mt-3 col-md-4">
             <label for="nombre" class="form-label">Nombre:</label>
             <input type="text" class="form-control" id="update_user_nombre" placeholder="Escriba su nombre"
-                name="update_user_nombre" value="<?php echo $usuario["nombre"] ?>">
+                name="update_user_nombre" value="<?php echo $usuario["nombre"] ?>" required>
         </div>
 
         <div class="mb-3 mt-3 col-md-4">
             <label for="correo" class="form-label">Correo:</label>
             <input type="text" class="form-control" id="update_user_correo" placeholder="Escriba su correo"
-                name="update_user_correo" value="<?php echo $usuario["correo"] ?>">
+                name="update_user_correo" value="<?php echo $usuario["correo"] ?>" required>
         </div>
 
         <div class="mb-3 mt-3 col-md-4">
             <label for="telefono" class="form-label">Telefono:</label>
             <input type="text" class="form-control" id="update_user_telefono" placeholder="Escriba su telefono"
-                name="update_user_telefono" value="<?php echo $usuario["telefono"] ?>">
+                name="update_user_telefono" value="<?php echo $usuario["telefono"] ?>" required>
         </div>
 
         <div class="mb-3 mt-3 col-md-4">
             <label for="ciudad" class="form-label">Ciudad:</label>
             <input type="text" class="form-control" id="update_user_ciudad" placeholder="Escriba su ciudad"
-                name="update_user_ciudad" value="<?php echo $usuario["ciudad"] ?>">
+                name="update_user_ciudad" value="<?php echo $usuario["ciudad"] ?>" required>
         </div>
 
         <div class="mb-3 mt-3 col-md-4">
             <label for="direccion" class="form-label">Dirección:</label>
             <input type="text" class="form-control" id="update_user_direccion" placeholder="Escriba su direccion"
-                name="update_user_direccion" value="<?php echo $usuario["direccion"] ?>">
+                name="update_user_direccion" value="<?php echo $usuario["direccion"] ?>" required>
         </div>
-        <button type="submit" class="btn btn-primary delete-color col-md-1">Actualizar</button>
+        <button type="submit" class="btn btn-primary delete-color col-md-2">Actualizar</button>
         <?php
         $persona = new ControladorPersonas();
         $persona->updateUsuarios();

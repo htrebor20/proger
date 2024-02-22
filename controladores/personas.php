@@ -30,6 +30,9 @@ class ControladorPersonas
                     }
                     window.location = "index.php?ruta=personas&sesion=usuarios"
                 </script>';
+                return "ok";
+            } else {
+                return "error";
             }
         }
     }
@@ -64,7 +67,7 @@ class ControladorPersonas
                         window.history.replaceState(null, null, window.location.href);
                     }
                 </script>';
-                echo '<div class="alert alert-success mt-2 col-md-4">Usuario actualizado correctamente.</div>';
+                echo '<div class="alert alert-success mt-2 col-md-4">Usuario actualizado correctamente. Refresca la página</div>';
             }
             return $respuesta;
         }
@@ -77,7 +80,6 @@ class ControladorPersonas
             !empty($_POST["create_user_nombre"]) &&
             !empty($_POST["create_user_correo"]) &&
             !empty($_POST["create_user_contrasena"]) &&
-            !empty($_POST["create_user_tipo"]) &&
             !empty($_POST["create_user_telefono"]) &&
             !empty($_POST["create_user_ciudad"]) &&
             !empty($_POST["create_user_direccion"])
@@ -88,7 +90,6 @@ class ControladorPersonas
                 "nombre" => $_POST["create_user_nombre"],
                 "correo" => $_POST["create_user_correo"],
                 "contrasena" => $_POST["create_user_contrasena"],
-                "tipo_id" => $_POST["create_user_tipo"],
                 "telefono" => $_POST["create_user_telefono"],
                 "ciudad" => $_POST["create_user_ciudad"],
                 "direccion" => $_POST["create_user_direccion"],

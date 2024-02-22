@@ -1,6 +1,6 @@
 <?php
 if (!isset($_GET["ruta"])) {
-    header("Location: index.php?ruta=tareas");
+    header("Location: index.php?ruta=proyectos&sesion=proyectos");
     exit;
 }
 ?>
@@ -27,16 +27,8 @@ if (!isset($_GET["ruta"])) {
 
             <ul class="navbar-nav nav">
                 <li class="nav-item">
-                    <a class="nav-link <?php echo ($_GET["ruta"] == "tareas") ? "active" : ""; ?>"
-                        href="index.php?ruta=tareas">Tus tareas</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link <?php echo ($_GET["ruta"] == "proyectos") ? "active" : ""; ?>"
-                        href="index.php?ruta=proyectos">Proyectos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link <?php echo ($_GET["ruta"] == "equipo") ? "active" : ""; ?>"
-                        href="index.php?ruta=equipo">Tu equipo</a>
+                        href="index.php?ruta=proyectos&sesion=proyectos">Proyectos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?php echo ($_GET["ruta"] == "personas") ? "active" : ""; ?>"
@@ -47,7 +39,7 @@ if (!isset($_GET["ruta"])) {
                 <button type="button" class="btn btn-primary color-custom dropdown-toggle" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     <img src="imagenes/avatar.png" width="40" height="40" class="rounded-circle me-2">
-                    Roberth
+                    Usuario
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="index.php?ruta=salir">Cerrar sesión</a></li>
@@ -63,11 +55,11 @@ if (!isset($_GET["ruta"])) {
                 style="height:100vh;">
                 <?php
                 if (isset($_GET["ruta"])) {
-                    if ($_GET["ruta"] == "tareas" || $_GET["ruta"] == "proyectos" || $_GET["ruta"] == "equipo" || $_GET["ruta"] == "personas") {
+                    if ($_GET["ruta"] == "proyectos" || $_GET["ruta"] == "personas") {
                         include "$_GET[ruta]Sidebar" . ".php";
                     }
                 } else {
-                    include "tareas.php";
+                    include "proyectos.php";
                 }
                 ?>
             </div>
@@ -77,13 +69,13 @@ if (!isset($_GET["ruta"])) {
                 <?php
                 $nombreArchivo = "";
                 if (isset($_GET["ruta"])) {
-                    if ($_GET["ruta"] == "tareas" || $_GET["ruta"] == "proyectos" || $_GET["ruta"] == "equipo" || $_GET["ruta"] == "personas" || $_GET["ruta"] == "salir") {
+                    if ($_GET["ruta"] == "proyectos"  || $_GET["ruta"] == "personas" || $_GET["ruta"] == "salir") {
                         $nombreArchivo = "$_GET[ruta]" . ".php";
                     } else {
                         return include "404.php";
                     }
                     if (isset($_GET["sesion"])) {
-                        if ($_GET["sesion"] == "usuarios" || $_GET["sesion"] == "clientes") {
+                        if ($_GET["sesion"] == "usuarios" || $_GET["sesion"] == "proyectos" || $_GET["sesion"] == "tareas") {
                             $nombreArchivo = "$_GET[sesion]" . ".php";
                         }
                     }

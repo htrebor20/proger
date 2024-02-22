@@ -20,9 +20,9 @@
         </div>
         <form class="formulario" method="POST">
 
-            <input type="email" id="loginEmail" name="loginEmail" placeholder="Ingresa tu Correo">
-            <input type="password" id="loginPassword" name="loginPassword" placeholder="Contraseña">
-            <button class="btn btn-light btn-lg" type="submit">Iniciar Sesión</button>
+            <input type="email" id="loginEmail" name="loginEmail" placeholder="Ingresa tu Correo" required>
+            <input type="password" id="loginPassword" name="loginPassword" placeholder="Contraseña" required>
+            <button class="btn btn-light btn-lg mt-2" type="submit">Iniciar Sesión</button>
 
             <?php
 
@@ -40,14 +40,6 @@
             ?>
 
         </form>
-        <div>
-            <ul class="navbar-nav nav login-options">
-                <li class="nav-item">
-                    <a class="nav-link fs-4 mt-3 text-decoration-underline" href="recuperarcontrasena.html">Crear una
-                        cuenta</a>
-                </li>
-            </ul>
-        </div>
     </div>
 </body>
 

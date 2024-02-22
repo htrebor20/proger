@@ -15,7 +15,6 @@ $usuarios = ControladorPersonas::readUsuarios();
         <th>Documento</th>
         <th>Nombre</th>
         <th>Correo</th>
-        <th>Tipo</th>
         <th>Ciudad</th>
         <th>Acciones</th>
       </tr>
@@ -34,9 +33,6 @@ $usuarios = ControladorPersonas::readUsuarios();
             <?php echo $value["correo"]; ?>
           </td>
           <td>
-            <?php echo $value["tipo_id"]; ?>
-          </td>
-          <td>
             <?php echo $value["ciudad"]; ?>
           </td>
           <td>
@@ -50,14 +46,18 @@ $usuarios = ControladorPersonas::readUsuarios();
                 <button class="btn delete-color"><i class="fa-solid fa-trash"></i></button>
                 <?php
                 $eliminar = new ControladorPersonas();
-                $eliminar->deleteUsuarios()
+                $response = $eliminar->deleteUsuarios()
                   ?>
               </form>
             </div>
           </td>
         </tr>
       <?php endforeach ?>
-
+      <?php
+        if($response){
+          echo '<div class="alert alert-danger mt-2 col-md-4">Error. El usuario usuario tiene tareas asignadas.</div>';
+        }
+      ?>
 
     </tbody>
   </table>
